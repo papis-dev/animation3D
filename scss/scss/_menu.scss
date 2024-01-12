@@ -1,0 +1,108 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+
+  &__logo {
+    width: 30vw;
+    height: auto;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked ~ .navigation__items {
+      left: 0;
+    }
+
+    &:checked~ .navigation__burger::before {
+      content: '\2716';
+      color: $secondBackground;
+      font-size: 10vw;
+    }
+  }
+
+  &__burger {
+    position: inherit;
+    padding: 1rem;
+    font-size: 13vw;
+    color: $highText;
+    font-weight: bold;
+    z-index: 10;
+    &::before {
+      content: '\2261';
+    }
+  }
+
+  &__items {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    background-color: $highText;
+    color: $secondBackground;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: -100vw;
+    top: 0;
+    transition: left 1s;
+    @include sous-titre;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondBackground;
+    padding: 2rem;
+  }
+}
+
+
+@media screen and (min-width: 640px) {
+  .navigation {
+    &__logo {
+      width: 15vw;
+    }
+
+    &__burger::before {
+      display: none;
+    }
+
+    &__items {
+      transition: none;
+      width: 95%;
+      height: inherit;
+      background-color: transparent;
+      color: $lowText;
+      flex-direction: row;
+      left: 0;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1rem;
+      @include sous-titre-tablette;
+    }
+
+    a{
+      color: $lowText;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navigation {
+    display: flex;
+    margin-top: 5rem;
+    &__logo {
+      width: 15vw;
+      align-self: center;
+    }
+
+    &__items {
+      @include sous-titre;
+    }
+  }
+}

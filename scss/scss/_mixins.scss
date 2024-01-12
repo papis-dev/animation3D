@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&family=Oswald&display=swap');
+
+// Desktop
+@mixin titre {
+  font-family: 'Oswald', sans-serif;
+  font-size: 9.6rem;
+}
+
+@mixin titre-section {
+  font-family: 'Oswald', sans-serif;
+  font-size: 6.4rem;
+}
+
+@mixin sous-titre {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 4.8rem;
+}
+
+@mixin titre-paragraph {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 4.8rem;
+}
+
+@mixin paragraph {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.4rem;
+}
+
+// Tablette
+@mixin titre-tablette {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5.6rem;
+}
+
+@mixin sous-titre-tablette {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.2rem;
+}
+
+@mixin titre-paragraph-tablette {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 4.8rem;
+}
+
+@mixin paragraph-tablette {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.4rem;
+}
+
+// Mobile
+@mixin titre-mobile {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.6rem;
+}
+
+@mixin sous-titre-mobile {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.4rem;
+}
+
+@mixin titre-paragraph-mobile {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.2rem;
+}
+
+@mixin paragraph-mobile {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem;
+}
+
+// Mixins backgrounds
+@mixin firstBackground() {
+  background-color: $firstBackground;
+}
+
+@mixin secondBackground() {
+  background-color: $secondBackground;
+}
+
+@mixin thirdBackground() {
+  background-color: $thirdBackground;
+}

@@ -1,0 +1,310 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&family=Oswald&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+.navigation__logo {
+  width: 30vw;
+  height: auto;
+}
+.navigation__input {
+  display: none;
+}
+.navigation__input:checked ~ .navigation__items {
+  left: 0;
+}
+.navigation__input:checked ~ .navigation__burger::before {
+  content: "✖";
+  color: #FEFBE9;
+  font-size: 10vw;
+}
+.navigation__burger {
+  position: inherit;
+  padding: 1rem;
+  font-size: 13vw;
+  color: #4F3422;
+  font-weight: bold;
+  z-index: 10;
+}
+.navigation__burger::before {
+  content: "≡";
+}
+.navigation__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+  background-color: #4F3422;
+  color: #FEFBE9;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: -100vw;
+  top: 0;
+  transition: left 1s;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 4.8rem;
+}
+.navigation a {
+  text-decoration: none;
+  color: #FEFBE9;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 640px) {
+  .navigation__logo {
+    width: 15vw;
+  }
+  .navigation__burger::before {
+    display: none;
+  }
+  .navigation__items {
+    transition: none;
+    width: 95%;
+    height: inherit;
+    background-color: transparent;
+    color: #AB6400;
+    flex-direction: row;
+    left: 0;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 3.2rem;
+  }
+  .navigation a {
+    color: #AB6400;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .navigation {
+    display: flex;
+    margin-top: 5rem;
+  }
+  .navigation__logo {
+    width: 15vw;
+    align-self: center;
+  }
+  .navigation__items {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 4.8rem;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 640px) {
+  .header__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 5.6rem;
+    width: 90%;
+    margin-bottom: 5rem;
+  }
+  .header__title span {
+    border-bottom: #FFC53D 4px solid;
+  }
+  .header__subtitle {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 3.2rem;
+    width: 90%;
+  }
+  .header__subtitle span {
+    display: block;
+    margin-top: 5rem;
+  }
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    width: 100vw;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.4rem;
+  }
+  .footer__left {
+    margin-left: 5rem;
+  }
+  .footer__right {
+    margin-right: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5rem;
+  }
+  .header__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 9.6rem;
+    width: auto;
+    padding-bottom: 3rem;
+  }
+  .header__title span {
+    border-bottom: #FFC53D 4px solid;
+  }
+  .header__subtitle {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 4.8rem;
+    width: auto;
+  }
+  .header__subtitle span {
+    display: block;
+    padding-top: 1rem;
+  }
+  .contact {
+    margin-top: 2rem;
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .contact__form {
+    order: -1;
+    flex-basis: 30%;
+    height: 80vh;
+  }
+  .contact__localisation {
+    align-items: flex-start;
+  }
+  .contact__localisation iframe {
+    width: 30vw;
+    height: 40vh;
+  }
+  .contact__text {
+    width: 30vw;
+    margin-bottom: 2rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .contact__horaires {
+    margin-left: 0;
+  }
+  .contact__adresse {
+    margin-left: 0;
+    width: 100%;
+    text-align: end;
+  }
+  .creations {
+    position: relative;
+  }
+  .creations__title {
+    margin-top: 4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 6.4rem;
+    color: #4F3422;
+  }
+  .creations__subtitle {
+    margin-top: 4rem;
+    font-family: "Oswald", sans-serif;
+    font-size: 6.4rem;
+    color: #AB6400;
+    text-align: center;
+  }
+  .creations__images {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .creations__image {
+    width: 30vw;
+    height: 20vw;
+  }
+  .creations__aigue {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .creations__peridot {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .creations__tanzanite {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+  .creations__spinelle {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}/*# sourceMappingURL=main.css.map */

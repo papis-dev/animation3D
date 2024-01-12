@@ -1,0 +1,164 @@
+// Tablette
+@media screen and (min-width: 640px) {
+    .header {
+        &__title {
+            @include titre-tablette;
+            width: 90%;
+            margin-bottom: 5rem;
+            span {
+                border-bottom: $solidBackground 4px solid;
+            }
+        }
+        &__subtitle {
+            @include sous-titre-tablette;
+            width: 90%;
+            span {
+                display: block;
+                margin-top: 5rem;
+            }
+        }
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 15vh;
+        width: 100vw;
+        @include paragraph-tablette;
+
+        &__left {
+            margin-left: 5rem;
+        }
+
+        &__right {
+            margin-right: 5rem;
+        }
+    }
+}
+
+// Desktop
+@media screen and (min-width: 1024px) {
+    .header {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 5rem;
+
+        &__title {
+            @include titre;
+            width: auto;
+            padding-bottom: 3rem;
+            span {
+                border-bottom: $solidBackground 4px solid;
+            }
+        }
+
+        &__subtitle {
+            @include sous-titre;
+            width: auto;
+            span {
+                display: block;
+                padding-top: 1rem;
+            }
+        }
+    }
+  
+     .contact {
+        margin-top: 2rem;
+        flex-direction: row;
+        gap: 4rem;
+
+        &__form {
+            order: -1;
+            flex-basis: 30%;
+            height: 80vh;
+        }
+
+        &__localisation {
+            align-items: flex-start;
+            iframe {
+                width: 30vw;
+                height: 40vh;
+            }
+        }
+
+        &__text {
+            width: 30vw;
+            margin-bottom: 2rem;
+            @include paragraph;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        &__horaires {
+            margin-left: 0;
+        }
+
+        &__adresse {
+            margin-left: 0;
+            width: 100%;
+            text-align: end;
+        }
+    }
+
+  .creations {
+        position: relative;
+        &__title {
+            margin-top: 4rem;
+            @include titre-section;
+            color: $highText;
+        }
+
+        &__subtitle {
+            margin-top: 4rem;
+            @include titre-section;
+            color: $lowText;
+            text-align: center;
+        }
+        &__images {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        &__image {
+            width: 30vw;
+            height: 20vw;
+        }
+        &__aigue {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+        &__peridot {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &__tanzanite {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+        }
+        &__spinelle {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
